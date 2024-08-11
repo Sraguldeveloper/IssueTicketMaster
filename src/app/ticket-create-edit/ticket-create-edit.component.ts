@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../api.service';
 import { StoreService } from '../store.service';
+import { STATE, TICKET_ERROR_MESSAGE, TICKET_SUCCESS_MESSAGE } from 'src/Constants/constant';
 interface TicketDetails{
     title: string,
     description:string
@@ -72,10 +73,10 @@ export class TicketCreateEditComponent {
       } else {
         this.api.addTicket(ticketData).subscribe({next:(value:TicketDetails)=>{
           if(value){
-            console.log(value)
+            this.store.showNotification(TICKET_SUCCESS_MESSAGE,STATE.SUCCESS)
           }
         },error:(error:Error)=>{
-          console.log(error.message)
+          this.store.showNotification(TICKET_ERROR_MESSAGE,STATE.ERROR)
         }})
       }
     }

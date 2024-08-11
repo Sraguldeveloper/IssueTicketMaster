@@ -2,3 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+.snackbar-error .mat-mdc-snack-bar-container {
+  background-color: red !important;
+  color: white !important;
+}
+
+/* Success Snackbar */
+.snackbar-success .mat-mdc-snack-bar-container {
+  background-color: yellowgreen !important;
+  color: white !important;
+}

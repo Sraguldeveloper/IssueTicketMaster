@@ -17,12 +17,17 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { TicketCreateEditComponent } from './ticket-create-edit/ticket-create-edit.component';
 import { HttpClientModule } from '@angular/common/http';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { NotificationComponent } from './store.service';
+import {MatDialogModule} from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     TicketListComponent,
-    TicketCreateEditComponent
+    TicketCreateEditComponent,
+    NotificationComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -37,6 +42,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatSelectModule,
     MatTableModule,
     MatPaginatorModule,
+    MatSnackBarModule,
+    MatDialogModule,
     HttpClientModule
   ],
   providers: [],
